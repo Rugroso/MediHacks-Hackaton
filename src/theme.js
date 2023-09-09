@@ -1,9 +1,10 @@
 const theme = {
     colors: {
-      bg: "#273246",
-      dark: "#293334",
+      bg: "#293334",
+      dark: "#1f2526",
       highlight: "#8e8d8d",
       c1: "#a4cace",
+      offwhite: "#ededed",
     },
     size: {
       default: 16,
