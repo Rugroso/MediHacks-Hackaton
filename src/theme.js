@@ -8,7 +8,7 @@ const theme = {
     size: {
       default: 16,
       h1: 32,
-      h2: 18,
+      h2: 24,
     },
     fontWeights: {
       normal: "400",
