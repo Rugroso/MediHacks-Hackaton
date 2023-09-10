@@ -5,7 +5,7 @@ import AppLoading from "expo-app-loading";
 import { useFonts } from 'expo-font';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-export default function Box({title, width, height, img, direction, iconName, textColor, description, forceflex, route}){
+export default function Box({title, width, height, img, direction, iconName, textColor, description, forceflex, route, centerTextPercent}){
     const navigator = useNavigation()
     const image = {uri: img};
     
@@ -19,21 +19,23 @@ export default function Box({title, width, height, img, direction, iconName, tex
 
   const styles = StyleSheet.create({
     head: {
-        marginLeft: 15,
+        
         
         fontSize: theme.size.h2,
         fontFamily: 'FiraSans-Bold',
         color: textColor,
-        width: '80%',
+        width: centerTextPercent,
         flexWrap: 'wrap',
         textAlign: 'center',
         
     },
     desc: {
-        marginLeft: 15,
-        fontSize: theme.size.default,
+        
+        fontSize: (theme.size.default),
         fontFamily: 'FiraSans-Regular',
-        color: theme.colors.dark
+        color: theme.colors.dark,
+        textAlign: 'center',
+        width: '100%',
     },
 })
     return(
