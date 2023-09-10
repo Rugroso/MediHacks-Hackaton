@@ -70,6 +70,7 @@ export default function Splash(){
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor: theme.colors.bg,
     },
     content: {
         flex: 1,

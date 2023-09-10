@@ -1,9 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { StyleSheet, View, Text, Image, Dimensions } from 'react-native';
 import { LineChart } from 'react-native-chart-kit';
 import theme from '../theme';
+import * as FileSystem from 'expo-file-system'
+import { useFocusEffect } from '@react-navigation/core';
 
 export default function UserScreen() {
+
+  const [userData, setUserData] = useState(null)
+  const fetchData = async () => {
+    try{
+      const filePath = `${FileSystem.documentDirectory}/userData.json`
+      const content = await FileSystem.readAsStringAsync(filePath)
+      const userData = JSON.parse(content)
+      setUserData(userData)
+    } catch(error){
+      console.error('Error reading data: ', error)
+    }
+  }
+  useEffect(() => {
+    fetchData()
+  }, [])
+
   const data = {
     labels: ['Mon', 'Thu', 'Wed', 'Tue', 'Fri', 'Sat', 'Sun'],
     datasets: [{
@@ -21,18 +39,20 @@ export default function UserScreen() {
   const handleDataPointClick = (point) => {
     console.log("Punto seleccionado:", point);
   };
-
+  useFocusEffect(() => {
+    fetchData()
+  })
   return (
     <View style={styles.container}>
       <View style={styles.profileContainer}>
         <Image source={require('../data/Abraham.jpg')} style={styles.image} />
-        <Text style={styles.name}>Abraham Saldivar</Text>
-        <Text style={styles.location}>Mexicali, Baja California</Text>
+        <Text style={styles.name}>{userData ? userData.name : 'Please wait...'}</Text>
+        <Text style={styles.location}>{userData ? userData.city : 'Please wait...'}, {userData ? userData.state : 'Please wait...'}</Text>
       </View>
 
       <View style={styles.arrow}>
         <View style={{flex: 1, height: 1, backgroundColor: 'white'}} />
-        <Text style={{width: 150, textAlign: 'center', color: 'white', fontSize:25}}>This Week Stats</Text>
+        <Text style={{width: 150, textAlign: 'center', color: 'white', fontSize:25}}>This Week's Stats</Text>
         <View style={{flex: 1, height: 1, backgroundColor: 'white'}} />
       </View>
 
@@ -111,15 +131,12 @@ const styles = StyleSheet.create({
   },
   statsContainer: {
     flex: 1,
+    alignSelf: 'center',
     alignItems: 'center',
     justifyContent: 'center',
   },
   chart: {
     marginVertical: 10,
-    borderRadius: 16,
-    paddingBottom: 10,
-    marginBottom: 80,
-    marginLeft: 20,
-    marginRight: 20,
+    paddingBottom: 50,
   }
 });
