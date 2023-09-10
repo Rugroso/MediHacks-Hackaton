@@ -1,4 +1,4 @@
-import { TouchableNativeFeedback } from 'react-native';
+import { TouchableNativeFeedback, View, ImageBackground, Text } from 'react-native';
 import theme from '../theme';
 import { useNavigation } from '@react-navigation/core';
 
