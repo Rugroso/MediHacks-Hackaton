@@ -5,6 +5,7 @@ import { useFonts } from "expo-font";
 import AppLoading from "expo-app-loading";
 import Constants from "expo-constants";
 import * as FileSystem from 'expo-file-system'
+import { useFocusEffect } from "@react-navigation/core";
 
 export default function EditProfile(){
     const [name, setName] = useState("");
