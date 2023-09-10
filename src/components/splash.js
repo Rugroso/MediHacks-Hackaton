@@ -8,7 +8,7 @@ import { useNavigation } from "@react-navigation/native";
 function send() {
     navigator = useNavigation()
     setTimeout(() => {
-      navigator.replace('Test')
+        navigator.navigate('Main')
     }, 6000);
   }
   
