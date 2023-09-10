@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import Splash from './src/components/splash.js';
 import Main from './src/components/Main.js'
-import React from 'react';
-import { StyleSheet, View } from 'react-native';
-import Map from './src/components/Map';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+const Stack = createNativeStackNavigator()
 
 export default function App() {
   return (

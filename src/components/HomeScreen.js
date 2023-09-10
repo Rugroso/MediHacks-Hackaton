@@ -7,7 +7,7 @@ export default function HomeScreen(){
     return(
       <>
       
-    <View style={{ flex: 1, marginTop: Constants.statusBarHeight, justifyContent: 'flex-start', alignItems: 'center', backgroundColor: theme.colors.bg}}>
+    <View style={{ flex: 1,  justifyContent: 'flex-start', alignItems: 'center', backgroundColor: theme.colors.bg}}>
     <Image
         style={{width: 150, height: 150, marginTop: '10%'}}
         source={{
