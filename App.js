@@ -7,6 +7,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import DiaryWriter from './src/components/DiaryWriter.js';
 import AudioPlayer from './src/components/Audio.js';
+import EditProfile from './src/components/EditProfile.js';
 
 const Stack = createNativeStackNavigator()
 
@@ -20,6 +21,7 @@ export default function App() {
         <Stack.Screen name = 'Diary' component={Diary}/>
         <Stack.Screen name = 'DiaryWriter' component={DiaryWriter}/>
         <Stack.Screen name = 'Audio' component={AudioPlayer}/>
+        <Stack.Screen name = 'EditProfile' component={EditProfile}/>
       </Stack.Navigator>
   </NavigationContainer>
   );
