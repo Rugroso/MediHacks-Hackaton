@@ -7,6 +7,9 @@ import EntriesNotFound from "./EntriesNotFound";
 import EvalQuestion from "./EvalQuestion";
 import { SafeAreaView } from "react-native-safe-area-context";
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useFonts } from "expo-font";
+import AppLoading from "expo-app-loading";
+
 export default function Evaluation(){
     const saveEvaluation = async () => {
         if (title && entryText) {
@@ -29,6 +32,13 @@ export default function Evaluation(){
           }
         }
       };
+      let [fontsLoaded] = useFonts({
+        'FiraSans-Regular' : require('../data/fonts/FiraSans-Regular.ttf'),
+        'FiraSans-Bold' : require('../data/fonts/FiraSans-Bold.ttf'),
+      })
+      if(!fontsLoaded){
+          return<AppLoading/>
+      }
     return(
        <SafeAreaView style={{flex:1}}>
         <ScrollView contentContainerStyle={styles.contentContainer}>
@@ -39,8 +49,8 @@ export default function Evaluation(){
           uri: 'https://freepngimg.com/thumb/categories/1786.png',
         }}
       />
-        <Text style={{  fontSize: theme.size.h1, color: theme.colors.offwhite}}>Evaluate yourself.</Text>
-        <Text style={{  fontSize: theme.size.default, color: theme.colors.offwhite, textAlign:'center', width:'60%'}}>How much do you agree with each of these statements? Try to be as honest as possible. </Text>
+        <Text style={{  fontSize: theme.size.h1, color: theme.colors.offwhite, fontFamily: 'FiraSans-Bold'}}>Evaluate yourself.</Text>
+        <Text style={{  fontSize: theme.size.default, color: theme.colors.offwhite, fontFamily: 'FiraSans-Regular', textAlign:'center', width:'60%'}}>How much do you agree with each one of these statements? Try to be as honest as possible. </Text>
         <EvalQuestion question='I had trouble staying focused today.'></EvalQuestion>
         <EvalQuestion question='I felt overwhelmed today.'></EvalQuestion>
         <EvalQuestion question='I struggled to fall asleep last night.'></EvalQuestion>
@@ -60,13 +70,11 @@ const styles = StyleSheet.create({
         
         paddingTop: Constants.statusBarHeight,
         backgroundColor: theme.colors.bg,
-        height: '150%',
         alignItems: 'center',
         
         
     },
     button: {
-        
         marginTop:'10%',
         alignSelf: 'center',
         paddingVertical: 20,

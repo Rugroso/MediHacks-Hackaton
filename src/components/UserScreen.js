@@ -4,6 +4,8 @@ import { LineChart } from 'react-native-chart-kit';
 import theme from '../theme';
 import * as FileSystem from 'expo-file-system'
 import { useFocusEffect } from '@react-navigation/core';
+import { useFonts } from 'expo-font';
+import AppLoading from 'expo-app-loading';
 
 export default function UserScreen() {
 
@@ -42,6 +44,13 @@ export default function UserScreen() {
   useFocusEffect(() => {
     fetchData()
   })
+  let [fontsLoaded] = useFonts({
+    'FiraSans-Regular' : require('../data/fonts/FiraSans-Regular.ttf'),
+    'FiraSans-Bold' : require('../data/fonts/FiraSans-Bold.ttf'),
+})
+if(!fontsLoaded){
+    return<AppLoading/>
+}
   return (
     <View style={styles.container}>
       <View style={styles.profileContainer}>
@@ -52,7 +61,7 @@ export default function UserScreen() {
 
       <View style={styles.arrow}>
         <View style={{flex: 1, height: 1, backgroundColor: 'white'}} />
-        <Text style={{width: 150, textAlign: 'center', color: 'white', fontSize:25}}>This Week's Stats</Text>
+        <Text style={{width: 150, textAlign: 'center', color: 'white', fontSize:25, fontFamily: 'FiraSans-Regular'}}>This Week's Stats</Text>
         <View style={{flex: 1, height: 1, backgroundColor: 'white'}} />
       </View>
 
@@ -120,14 +129,15 @@ const styles = StyleSheet.create({
   },
   name: {
     fontSize: 26,
-    fontWeight: 'bold',
     color: '#FFF',
     marginBottom: 5,
+    fontFamily: 'FiraSans-Bold',
   },
   location: {
     fontSize: 20,
     color: '#FFF',
     marginBottom: 10,
+    fontFamily: 'FiraSans-Regular',
   },
   statsContainer: {
     flex: 1,
@@ -138,5 +148,6 @@ const styles = StyleSheet.create({
   chart: {
     marginVertical: 10,
     paddingBottom: 50,
+    marginRight: 30
   }
 });

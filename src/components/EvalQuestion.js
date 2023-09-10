@@ -4,9 +4,18 @@ import entries from "../data/entries";
 import Constants from "expo-constants";
 import theme from "../theme";
 import EntriesNotFound from "./EntriesNotFound";
+import { useFonts } from "expo-font";
+import AppLoading from "expo-app-loading";
+
 const CircleButton = (props) => {
     
-  
+  let [fontsLoaded] = useFonts({
+    'FiraSans-Regular' : require('../data/fonts/FiraSans-Regular.ttf'),
+    'FiraSans-Bold' : require('../data/fonts/FiraSans-Bold.ttf'),
+  })
+  if(!fontsLoaded){
+      return<AppLoading/>
+  }
     return (
         <TouchableOpacity activeOpacity={1}
         style={{
@@ -51,7 +60,8 @@ const CircleButton = (props) => {
             color: theme.colors.offwhite,
             textAlign: "center",
             marginTop: "5%",
-            fontSize: theme.size.h2,
+            fontSize: theme.size.h3,
+            fontFamily: 'FiraSans-Regular',
           }}
         >
           {question}
