@@ -5,7 +5,6 @@ import { useFonts } from "expo-font";
 import AppLoading from "expo-app-loading";
 import Constants from "expo-constants";
 import * as FileSystem from 'expo-file-system'
-import { useFocusEffect } from "@react-navigation/core";
 
 export default function EditProfile(){
     const [name, setName] = useState("");
@@ -99,17 +98,17 @@ const styles = StyleSheet.create({
         backgroundColor: theme.colors.bg,
         margin: '3%',
         paddingVertical: '3%',
-        borderRadius: 10,
+        borderRadius: 18,
       },
       button: {
         backgroundColor: theme.colors.bg,
         color: theme.colors.offwhite,
         fontFamily: 'FiraSans-Regular',
-        width: '60%',
+        width: '90%',
         alignSelf: 'center',
         textAlign: 'center',
         margin: '3%',
         padding: '3%',
-        borderRadius: 10,
+        borderRadius: 20,
       }
 })
