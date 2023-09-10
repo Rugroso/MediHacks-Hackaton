@@ -11,6 +11,7 @@ import Evaluation from './src/components/Evaluation.js';
 
 
 import AudioPlayer from './src/components/Audio.js';
+import EditProfile from './src/components/EditProfile.js';
 
 const Stack = createNativeStackNavigator()
 
@@ -23,11 +24,13 @@ export default function App() {
         <Stack.Screen name = 'Map' component={Map}/>
         <Stack.Screen name = 'Diary' component={Diary}/>
         <Stack.Screen name = 'DiaryWriter' component={DiaryWriter}/>
-
         <Stack.Screen name = 'Evaluation' component={Evaluation}/>
-
         <Stack.Screen name = 'Audio' component={AudioPlayer}/>
+
         <Stack.Screen name = 'BreathingMeditation' component={BreathingMeditation}/>
+
+        <Stack.Screen name = 'EditProfile' component={EditProfile}/>
+
       </Stack.Navigator>
   </NavigationContainer>
   );

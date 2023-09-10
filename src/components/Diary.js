@@ -6,10 +6,6 @@ import theme from "../theme";
 import EntriesNotFound from "./EntriesNotFound";
 import DiaryWriter from "./DiaryWriter";
 
-const isDiaryEmpty = (obj) => {
-    return Object.keys(obj).length == 0
-}
-
 export default function Diary(){
     return(
         <DiaryWriter/>
