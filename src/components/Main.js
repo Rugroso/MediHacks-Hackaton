@@ -29,6 +29,7 @@ function Home() {
     return (
       <>
       
+
         <StatusBar backgroundColor={theme.colors.bg} style="light" />
       
          
@@ -51,12 +52,12 @@ function Home() {
             backgroundColor: theme.colors.dark, 
             height: '8%', 
             
+
            
             borderTopWidth:0,
             position: 'absolute',
             overflow: 'hidden',
             paddingBottom: -(insets.bottom),
-            
           },
           tabBarLabelStyle: { marginBottom: 0,},
           tabBarIconStyle: { marginTop: 13, },
