@@ -8,12 +8,12 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import DiaryWriter from './src/components/DiaryWriter.js';
 import BreathingMeditation from './src/components/BreathingMeditation.js';
 import Evaluation from './src/components/Evaluation.js';
-
-
+import { LogBox } from 'react-native';
 import AudioPlayer from './src/components/Audio.js';
 import EditProfile from './src/components/EditProfile.js';
 
 const Stack = createNativeStackNavigator()
+LogBox.ignoreAllLogs()
 
 export default function App() {
   return (
