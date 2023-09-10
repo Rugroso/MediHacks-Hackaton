@@ -2,32 +2,32 @@ import { TouchableNativeFeedback, View, ImageBackground, Text, StyleSheet } from
 import theme from '../theme';
 import { useNavigation } from '@react-navigation/core';
 import AppLoading from "expo-app-loading";
-
+import { useFonts } from 'expo-font';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import {
-    useFonts,
-    Kanit_500Medium,
-    
-  } from "@expo-google-fonts/kanit";
+
 export default function Box({title, width, height, img, direction, iconName, textColor, description, forceflex, route}){
     const navigator = useNavigation()
     const image = {uri: img};
+    
     let [fontsLoaded] = useFonts({
-        Kanit_500Medium,
-        
-      });
+      'FiraSans-Regular' : require('../data/fonts/FiraSans-Regular.ttf'),
+      'FiraSans-Bold' : require('../data/fonts/FiraSans-Bold.ttf'),
+  })
+  if(!fontsLoaded){
+      return<AppLoading/>
+  }
+
     return(
       <TouchableNativeFeedback onPress={() => navigator.navigate(route)}>
-        <View style={{width: width, height: height, backgroundColor: theme.colors.block, borderRadius: 30, alignItems: 'center'}}>
-             <ImageBackground source={image} resizeMode="cover" imageStyle={{borderRadius: 30}} style={{flex:1, width:'100%', alignItems: 'center', justifyContent: 'center',  flexDirection: direction }}>
-             {iconName ? (<View style={{marginLeft:'10%', marginRight: forceflex}}><Ionicons name={iconName} color={theme.colors.offwhite} size={60}></Ionicons></View>):null}
-             <View style={{flex:1, flexDirection: 'row', justifyContent: 'center'}}>
-            <Text style={{flex: 1, color: textColor, fontSize: theme.size.h1, flexWrap: 'wrap', textAlign: 'center', fontFamily: "Kanit_500Medium"}}>{title}</Text>
+        <View style={{width: width, height: height, backgroundColor: theme.colors.block, borderRadius: 30}}>
+             <ImageBackground source={image} resizeMode="cover" imageStyle={{borderRadius: 30}} style={{flex:1, width:'100%', flexDirection: direction }}>
+             {iconName ? (<View style={{alignSelf: 'center', marginLeft:'5%', marginRight: forceflex}}><Ionicons name={iconName} color={theme.colors.offwhite} size={60}></Ionicons></View>):null}
+             <View style={{justifyContent: 'flex-start', flexDirection: 'row', justifyContent: 'flex-start'}}>
+            <Text style={styles.head}>{title}</Text>
             </View>
             {description ? (
-        <Text style={{margin:'6.5%'}}>{description}</Text>
+        <Text style={styles.desc}>{description}</Text>
       ) : null}
-            
             </ImageBackground>
         </View>
       </TouchableNativeFeedback>
@@ -41,6 +41,8 @@ const styles = StyleSheet.create({
         fontSize: theme.size.h2,
         fontFamily: 'FiraSans-Bold',
         color: theme.colors.dark,
+        width: '80%',
+        flexWrap: 'wrap',
     },
     desc: {
         marginLeft: 15,
