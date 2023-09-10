@@ -2,8 +2,10 @@ import React, {useEffect, useState} from 'react';
 import Splash from './src/components/splash.js';
 import Map from './src/components/Map.js'
 import Main from './src/components/Main.js'
+import Diary from './src/components/Diary.js';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import DiaryWriter from './src/components/DiaryWriter.js';
 
 const Stack = createNativeStackNavigator()
 
@@ -14,7 +16,9 @@ export default function App() {
         <Stack.Screen name = 'Splash' component={Splash}/>
         <Stack.Screen name = 'Main' component={Main}/>
         <Stack.Screen name = 'Map' component={Map}/>
+        <Stack.Screen name = 'Diary' component={Diary}/>
+        <Stack.Screen name = 'DiaryWriter' component={DiaryWriter}/>
       </Stack.Navigator>
-    </NavigationContainer>
+  </NavigationContainer>
   );
 }
