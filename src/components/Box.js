@@ -9,7 +9,7 @@ import {
     Kanit_500Medium,
     
   } from "@expo-google-fonts/kanit";
-export default function Box({title, width, height, img, direction, iconName, textColor, description, forceflex}){
+export default function Box({title, width, height, img, direction, iconName, textColor, description, forceflex, route}){
     const navigator = useNavigation()
     const image = {uri: img};
     let [fontsLoaded] = useFonts({
