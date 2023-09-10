@@ -5,6 +5,7 @@ const theme = {
       highlight: "#8e8d8d",
       c1: "#a4cace",
       offwhite: "#ededed",
+      block: '#CECECE',
     },
     size: {
       default: 16,
