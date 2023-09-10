@@ -1,9 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import Main from './src/components/Main.jsx'
+import Main from './src/components/Main.js'
 
 export default function App() {
-  
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
@@ -13,13 +12,3 @@ export default function App() {
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: theme.colors.bg,
-    fontSize: theme.size.h1
-  },
-});
