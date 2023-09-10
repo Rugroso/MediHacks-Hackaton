@@ -30,12 +30,11 @@ function Home() {
     const insets = useSafeAreaInsets();
     return (
       <>
-      <View style={{height: insets.bottom}}>
-                    <StatusBar backgroundColor={theme.colors.bg} style="light" />
-                </View>
-    <NavigationContainer>
-         
-      <Tab.Navigator
+      
+      <StatusBar backgroundColor={theme.colors.bg} style="light" />
+      
+        <NavigationContainer>
+    <Tab.Navigator
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
@@ -53,12 +52,12 @@ function Home() {
             backgroundColor: theme.colors.dark, 
             height: '8%', 
             
-            borderLeftWidth: 0.2,
-                borderRightWidth: 0.2,
+            
                 borderTopWidth:0,
                 position: 'absolute',
                 overflow: 'hidden',
                 paddingBottom: -(insets.bottom),
+                
   
           },
           tabBarLabelStyle: { marginBottom: 0,},
@@ -72,6 +71,7 @@ function Home() {
       <Tab.Screen name="User"  component={User} options={{ tabBarLabel: '' }}/>
     </Tab.Navigator>
     
+      
     </NavigationContainer></>
       );
   }
@@ -79,7 +79,7 @@ function Home() {
 export default function Main(){
     return(
         <SafeAreaProvider style={{ backgroundColor: theme.colors.dark }}>
-      <SafeAreaView edges={['bottom']} style={{flex:1, backgroundColor: theme.colors.dark}}>
+      <SafeAreaView edges={['bottom', 'top']} style={{flex:1, backgroundColor: theme.colors.dark,}}>
       
        
       
