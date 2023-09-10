@@ -17,12 +17,31 @@ export default function Box({title, width, height, img, direction, iconName, tex
       return<AppLoading/>
   }
 
+  const styles = StyleSheet.create({
+    head: {
+        marginLeft: 15,
+        
+        fontSize: theme.size.h2,
+        fontFamily: 'FiraSans-Bold',
+        color: textColor,
+        width: '80%',
+        flexWrap: 'wrap',
+        textAlign: 'center',
+        
+    },
+    desc: {
+        marginLeft: 15,
+        fontSize: theme.size.default,
+        fontFamily: 'FiraSans-Regular',
+        color: theme.colors.dark
+    },
+})
     return(
       <TouchableNativeFeedback onPress={() => navigator.navigate(route)}>
         <View style={{width: width, height: height, backgroundColor: theme.colors.block, borderRadius: 30}}>
              <ImageBackground source={image} resizeMode="cover" imageStyle={{borderRadius: 30}} style={{flex:1, width:'100%', flexDirection: direction }}>
              {iconName ? (<View style={{alignSelf: 'center', marginLeft:'5%', marginRight: forceflex}}><Ionicons name={iconName} color={theme.colors.offwhite} size={60}></Ionicons></View>):null}
-             <View style={{justifyContent: 'flex-start', flexDirection: 'row', justifyContent: 'flex-start'}}>
+             <View style={{justifyContent: 'flex-start', flexDirection: 'row', alignItems: 'center'}}>
             <Text style={styles.head}>{title}</Text>
             </View>
             {description ? (
@@ -34,20 +53,3 @@ export default function Box({title, width, height, img, direction, iconName, tex
     )
 } 
 
-const styles = StyleSheet.create({
-    head: {
-        marginLeft: 15,
-        marginTop: 10,
-        fontSize: theme.size.h2,
-        fontFamily: 'FiraSans-Bold',
-        color: theme.colors.dark,
-        width: '80%',
-        flexWrap: 'wrap',
-    },
-    desc: {
-        marginLeft: 15,
-        fontSize: theme.size.default,
-        fontFamily: 'FiraSans-Regular',
-        color: theme.colors.dark
-    },
-})
