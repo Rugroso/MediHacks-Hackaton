@@ -11,7 +11,7 @@ export default function AudioPlayer() {
   const [duration, setDuration] = useState(1);
   const [volume, setVolume] = useState(1.0);
   const [isLooping, setIsLooping] = useState(false);
-  const [songTitle, setSongTitle] = useState("Prueba #1");
+  const [songTitle, setSongTitle] = useState("Test #1");
 
   useEffect(() => {
     if (sound) {
