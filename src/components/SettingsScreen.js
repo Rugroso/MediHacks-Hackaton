@@ -21,7 +21,7 @@ export default function SettingsScreen(){
           }}
         />
         
-        <Text style={{  fontSize: (theme.size.h1)+10, color: theme.colors.offwhite, fontFamily: 'FiraSans-Bold'}}>Settings</Text>
+        <Text style={{  fontSize: (theme.size.h1)+10, color: theme.colors.offwhite, fontFamily: 'FiraSans-Bold'}}>Options</Text>
         <View style={{ flex: 1, paddingBottom: '10%',width: '100%', flexWrap: 'wrap', alignContent: 'space-between',flexDirection: 'row', alignItems: '', justifyContent: 'space-evenly', marginTop: '5%'}}>
         
         <Box title='Edit Profile' width='90%' height='22.5%' img='https://i.ibb.co/W3yCVgd/bg5.png' textColor={theme.colors.offwhite} iconName='newspaper' direction='row' route='EditProfile'></Box>
