@@ -7,6 +7,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import DiaryWriter from './src/components/DiaryWriter.js';
 
+
 const Stack = createNativeStackNavigator()
 
 export default function App() {
