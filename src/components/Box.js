@@ -2,14 +2,14 @@ import { TouchableNativeFeedback, View, ImageBackground, Text, StyleSheet } from
 import theme from '../theme';
 import { useNavigation } from '@react-navigation/core';
 import AppLoading from "expo-app-loading";
-import { useFonts } from "expo-font";
+
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {
     useFonts,
     Kanit_500Medium,
     
   } from "@expo-google-fonts/kanit";
-export default function Box({title, width, height, img}){
+export default function Box({title, width, height, img, direction, iconName, textColor, description, forceflex}){
     const navigator = useNavigation()
     const image = {uri: img};
     let [fontsLoaded] = useFonts({

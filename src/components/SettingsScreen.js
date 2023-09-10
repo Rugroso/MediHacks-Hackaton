@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
 import theme from '../theme';
 import Constants from 'expo-constants';
 import Box from './Box';
+import { AppLoading } from "expo-app-loading";
 import {
   useFonts,
   Kanit_700Bold,
@@ -12,6 +13,7 @@ export default function SettingsScreen(){
     Kanit_700Bold,
     
   });
+  
     return(
       <>
       <View style={{ flex: 1,  justifyContent: 'flex-start', alignItems: 'center', backgroundColor: theme.colors.bg}}>
@@ -21,6 +23,7 @@ export default function SettingsScreen(){
             uri: 'https://freepngimg.com/thumb/categories/1786.png',
           }}
         />
+        
         <Text style={{  fontSize: (theme.size.h1)+10, color: theme.colors.offwhite, fontFamily: 'Kanit_700Bold'}}>Settings</Text>
         <View style={{ flex: 1, paddingBottom: '10%',width: '100%', flexWrap: 'wrap', alignContent: 'space-between',flexDirection: 'row', alignItems: '', justifyContent: 'space-evenly', marginTop: '5%'}}>
         
