@@ -1,9 +1,16 @@
 import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
 import theme from '../theme';
+import AppLoading from 'expo-app-loading';
+import { useFonts } from 'expo-font';
 import Constants from 'expo-constants';
 import Box from './Box';
 export default function HomeScreen(){
-  
+  let [fontsLoaded] = useFonts({
+    'FiraSans-Bold' : require('../data/fonts/FiraSans-Bold.ttf'),
+})
+if(!fontsLoaded){
+    return<AppLoading/>
+}  
     return(
       <>
     <View style={{ flex: 1,  justifyContent: 'flex-start', alignItems: 'center', backgroundColor: theme.colors.bg}}>
@@ -13,7 +20,7 @@ export default function HomeScreen(){
           uri: 'https://freepngimg.com/thumb/categories/1786.png',
         }}
       />
-      <Text style={{  fontSize: theme.size.h1, color: theme.colors.offwhite}}>Welcome Again!</Text>
+      <Text style={{  fontSize: theme.size.h1, color: theme.colors.offwhite, fontFamily: 'FiraSans-Bold'}}>Welcome Again!</Text>
       <View style={{ flex: 1, paddingBottom: '10%',width: '100%', flexWrap: 'wrap', alignContent: 'space-between',flexDirection: 'row', alignItems: '', justifyContent: 'space-evenly', marginTop: '5%'}}>
       <Box title='Meditation' description = 'Check out your recommended meditation program.' width='45%' height='30%' img='https://i.ibb.co/0qbnSyD/bg.png'></Box>
       <Box title='CalmPlay' description = 'Unwind and play.' width='45%' height='30%' img='https://i.ibb.co/5Yv3Lj2/bg2.png'></Box>
