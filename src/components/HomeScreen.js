@@ -19,7 +19,7 @@ export default function HomeScreen(){
       <Box title='Meditation' width='45%' height='30%'></Box>
       <Box title='CalmPlay' width='45%' height='30%'></Box>
       <Box title='My Journey' width='92.5%' height='30%'></Box>
-      <Box title='Therapist' width='92.5%' height='30%'></Box>
+      <Box title='Therapist' width='92.5%' height='30%' route='Map'></Box>
       </View> 
       
     </View>
