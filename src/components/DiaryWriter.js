@@ -82,7 +82,7 @@ if(!fontsLoaded){
         <Text style = {styles.button}>Save</Text>
       </TouchableNativeFeedback>
       <FlatList
-        data={entries.reverse()}
+        data={entries}
         keyExtractor={(item, index) => index.toString()}
         renderItem={({ item }) => (
           <View style={styles.entryContainer}>
