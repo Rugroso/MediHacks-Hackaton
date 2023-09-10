@@ -27,7 +27,7 @@ export default function SettingsScreen(){
 
         <Box title='Edit Profile' width='90%' height='22.5%' img='https://i.ibb.co/W3yCVgd/bg5.png' textColor={theme.colors.offwhite} iconName='newspaper' direction='row'></Box>
         <Box title='See Stats' width='90%' height='22.5%' img='https://i.ibb.co/T1qxf0D/bg6.png' textColor={theme.colors.offwhite} iconName='stats-chart' direction='row'></Box>
-        <Box title='Modify Evaluation' width='90%' height='22.5%' img='https://i.ibb.co/Zfsb2NY/bg8.png' textColor={theme.colors.offwhite} iconName='speedometer' direction='row'></Box>
+        <Box title='Modify Evaluation' width='90%' height='22.5%' img='https://i.ibb.co/Zfsb2NY/bg8.png' textColor={theme.colors.offwhite} iconName='speedometer' direction='row' route='Evaluation'></Box>
         <Box title='Manage App Preferences' width='90%' height='22.5%' img='https://i.ibb.co/QQ3GHJG/bg7.png' textColor={theme.colors.offwhite} iconName='flag' direction='row'></Box>
 
         </View> 
